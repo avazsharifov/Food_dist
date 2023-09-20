@@ -1,70 +1,34 @@
-
-let foto = document.querySelectorAll(".offer__slide")
-let nazad =document.querySelector(".offer__slider-prev")
-let peryod =document.querySelector(".offer__slider-next")
+let second = document.querySelector("#seconds")
+let minut = document.querySelector("#minutes")
 
 
+let sval = second.innerHTML ; 
+let mval = minut.innerHTML ;
 
-let rasm = document.querySelectorAll(".tabcontent")
-let knopki = document.querySelectorAll(".tabheader__item")
-let menu = document.querySelectorAll(".tabcontent__descr")
-
-
-function yunus(a = 0) {
-
-    rasm.forEach(img2 => {
-          img2.classList.add("hide" , "fade")
-          rasm[a].classList.remove("hide")
-    })
-
-    menu.forEach(mne => {
-        mne.classList.add("hide" , "fade")
-        menu[a].classList.remove("hide")
-    })
-}
-knopki.forEach((knp, a) =>{
-    knp.onclick = () => {
-        yunus(a) 
-    }
-} )
-
-yunus()
-
-
-
-let sif = 0
-
-
-
-
-
-function avaz (a) {
+let kal = 20
+let lak = 56
+setInterval(() => {
+    kal --
     
-    if(a > foto.length -1){
-        sif = 0
+    if(kal < 0 ) {
+        kal = 59
     }
-    if(a < 0){
-        sif = 3
-    }
-    foto.forEach(img => {
+    let avaz = sval = kal
+    
+    
+      second.innerHTML = avaz
+
+        if( second.innerHTML == 0) {
+             lak --            
+         }
+         mval = lak
+         minut.innerHTML = mval  
+
+        }, 1000);
         
-        img.classList.add("hide", "fade")
-        foto[sif].classList.remove("hide")
-    
-    
-    })
-}
 
-avaz(sif)
-peryod.onclick = ( ) => {
-  sif ++
-  avaz(sif)
-}
 
-nazad.onclick = ( ) => {
-    sif --
-    avaz(sif)
-  }
+
 
 
  

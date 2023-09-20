@@ -502,8 +502,9 @@ a {
 	margin-top: 60px;
 	padding-left: 95px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	gap: 50px;
 }
 .promotion__timer .timer__block {
 	width: 102px;
